@@ -39,6 +39,10 @@ app
         return vm.state === Game.STATE_VICTORY;
       };
 
+      vm.stateDraw = function() {
+        return vm.state === Game.STATE_DRAW;
+      };
+
       $scope.$watch(function() {
         return Game.getCurrentPlayer();
       }, function(newVal) {

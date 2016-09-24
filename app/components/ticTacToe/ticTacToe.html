@@ -4,7 +4,7 @@
     <button class="btn btn-default" ng-click="$ctrl.startGame()">Start game</button>
   </div>
 </div>
-<div ng-if="$ctrl.statePlay() || $ctrl.stateVictory()">
+<div ng-if="$ctrl.statePlay() || $ctrl.stateVictory() || $ctrl.stateDraw()">
   <div class="grid-wrap">
     <victory-canvas ng-if="$ctrl.stateVictory()"></victory-canvas>
     <div class="grid">
@@ -21,6 +21,9 @@
   </div>
   <div ng-if="$ctrl.stateVictory()">
     <h1>{{$ctrl.currentPlayer.name}} won!</h1>
+  </div>
+  <div ng-if="$ctrl.stateDraw()">
+    <h1>Draw!</h1>
   </div>
   <div class="buttons">
     <button class="btn btn-default" ng-click="$ctrl.restartGame()">Restart</button>

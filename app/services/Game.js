@@ -8,6 +8,7 @@ app
     var STATE_INTRO = 'intro';
     var STATE_PLAY = 'play';
     var STATE_VICTORY = 'victory';
+    var STATE_DRAW = 'draw';
 
     var grid;
 
@@ -105,7 +106,7 @@ app
         state = STATE_VICTORY;
       }
       else if (fullGrid()) {
-        console.log('GRID IS FULL!');
+        state = STATE_DRAW;
       } else {
         changeTurn();
       }
@@ -127,6 +128,7 @@ app
 
       STATE_INTRO: STATE_INTRO,
       STATE_PLAY: STATE_PLAY,
-      STATE_VICTORY: STATE_VICTORY
+      STATE_VICTORY: STATE_VICTORY,
+      STATE_DRAW: STATE_DRAW
     }
   }])
