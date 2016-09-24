@@ -11,39 +11,22 @@ app
         Game.startGame();
       };
 
-      $scope.$watch(function() {
-        return Game.getState();
-      }, function(newVal) {
+      $scope.$watch(() => Game.getState(), newVal => {
         vm.state = newVal;
       });
 
-      $scope.$watch(function() {
-        return Game.getGrid();
-      }, function(newVal) {
+      $scope.$watch(() => Game.getGrid(), newVal => {
         vm.grid = newVal;
       });
 
-      vm.stateIntro = function() {
-        return vm.state === Constants.STATE_INTRO;
-      };
-
-      vm.statePlay = function() {
-        return vm.state === Constants.STATE_PLAY;
-      };
-
-      vm.stateVictory = function() {
-        return vm.state === Constants.STATE_VICTORY;
-      };
-
-      vm.stateDraw = function() {
-        return vm.state === Constants.STATE_DRAW;
-      };
-
-      $scope.$watch(function() {
-        return Game.getCurrentPlayer();
-      }, function(newVal) {
+      $scope.$watch(() => Game.getCurrentPlayer(), newVal => {
         vm.currentPlayer = newVal;
       });
+
+      vm.stateIntro = () => vm.state === Constants.STATE_INTRO;
+      vm.statePlay = () => vm.state === Constants.STATE_PLAY;
+      vm.stateVictory = () => vm.state === Constants.STATE_VICTORY;
+      vm.stateDraw = () => vm.state === Constants.STATE_DRAW;
 
       vm.cellClicked = function(item) {
         Game.selectCell(item);
