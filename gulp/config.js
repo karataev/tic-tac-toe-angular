@@ -4,5 +4,6 @@ module.exports = {
   dist: './dist',
   html: {
     watch: './dist/index.html'
-  }
+  },
+  production: false
 };

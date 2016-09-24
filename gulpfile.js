@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var config = require('./gulp/config');
 
 function getTask(task) {
   return require('./gulp/' + task);
@@ -14,12 +15,19 @@ gulp.task('sass', getTask('sass'));
 gulp.task('vendorCss', getTask('vendorCss'));
 gulp.task('watch', getTask('watch'));
 
-gulp.task('build:dev', gulp.series(
+gulp.task('parseParams', function(done) {
+  var param = process.argv[3];
+  if (param === '-p') config.production = true;
+  done();
+});
+
+gulp.task('build', gulp.series(
+  'parseParams',
   'clean',
   gulp.parallel('indexHtml', 'appJs', 'vendorJs', 'templates', 'sass', 'vendorCss')
 ));
 
 gulp.task('serve', gulp.series(
-  'build:dev',
+  'build',
   gulp.parallel('browserSync', 'watch')
 ));
