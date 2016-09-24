@@ -16,14 +16,14 @@
       </div>
     </div>
   </div>
-  <div ng-if="$ctrl.statePlay()">
-    Current turn: {{$ctrl.currentPlayer.name}}
+  <div ng-if="$ctrl.statePlay()" class="current-turn">
+    {{$ctrl.currentPlayer.name}} turn
   </div>
   <div ng-if="$ctrl.stateVictory()">
-    <h1>VICTORY!!! {{$ctrl.currentPlayer.name}}</h1>
+    <h1>{{$ctrl.currentPlayer.name}} won!</h1>
   </div>
-  <div>
+  <div class="buttons">
     <button class="btn btn-default" ng-click="$ctrl.restartGame()">Restart</button>
-    <button class="btn btn-default" ng-click="$ctrl.endGame()">End game</button>
+    <button class="btn btn-default" ng-click="$ctrl.endGame()">Main Menu</button>
   </div>
 </div>

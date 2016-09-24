@@ -1,5 +1,8 @@
 tic-tac-toe {
   display: block;
+  width: 800px;
+  margin: 50px auto;
+  text-align: center;
 
   .grid-wrap {
     position: relative;
@@ -12,6 +15,14 @@ tic-tac-toe {
     .grid-row {
       display: flex;
     }
+  }
+
+  .current-turn {
+    margin-top: 30px;
+  }
+
+  .buttons {
+    margin-top: 20px;
   }
 
 }
