@@ -7,14 +7,14 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 
 function dev() {
-  return gulp.src('./app/app.scss')
+  return gulp.src(config.styles.src)
     // .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers:['last 2 versions']
     }))
     // .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest(config.styles.dist))
     .pipe(browserSync.stream())
 }
 

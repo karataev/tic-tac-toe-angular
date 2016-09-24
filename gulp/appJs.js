@@ -7,11 +7,11 @@ var config = require('./config');
 var babel = require('gulp-babel');
 
 module.exports = function appJs() {
-  return gulp.src('./app/**/*.js')
+  return gulp.src(config.js.src)
     .pipe(concat('bundle.js'))
     .pipe(ngAnnotate())
     // .pipe(gulpIf(config.production, babel()))
     .pipe(babel())
     .pipe(gulpIf(config.production, uglify()))
-    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest(config.js.dist))
 };

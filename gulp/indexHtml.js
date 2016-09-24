@@ -2,6 +2,6 @@ var gulp = require('gulp');
 var config = require('./config');
 
 module.exports = function indexHtml() {
-  return gulp.src('./app/index.html')
+  return gulp.src(config.indexHtml)
     .pipe(gulp.dest(config.dist))
 };
