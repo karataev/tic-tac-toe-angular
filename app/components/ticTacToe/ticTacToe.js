@@ -5,17 +5,26 @@ app
 
       vm.startGame = function() {
         Game.startGame();
-        vm.grid = Game.getGrid();
       };
 
       vm.endGame = function() {
         Game.setState(Game.STATE_INTRO);
       };
 
+      vm.restartGame = function() {
+        Game.startGame();
+      };
+
       $scope.$watch(function() {
         return Game.getState();
       }, function(newVal) {
         vm.state = newVal;
+      });
+
+      $scope.$watch(function() {
+        return Game.getGrid();
+      }, function(newVal) {
+        vm.grid = newVal;
       });
 
       vm.isIntro = function() {
