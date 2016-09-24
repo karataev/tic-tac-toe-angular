@@ -11,12 +11,15 @@
   <div ng-if="$ctrl.statePlay()">
     Current turn: {{$ctrl.currentPlayer.name}}
   </div>
-  <div class="grid">
-    <div class="row" ng-repeat="row in $ctrl.grid">
-      <cell ng-repeat="item in row"
-            data="item"
-            on-click="$ctrl.cellClicked"
-      ></cell>
+  <div class="grid-wrap">
+    <canvas class="victory-canvas" ng-if="$ctrl.stateVictory()"></canvas>
+    <div class="grid">
+      <div class="row" ng-repeat="row in $ctrl.grid">
+        <cell ng-repeat="item in row"
+              data="item"
+              on-click="$ctrl.cellClicked"
+        ></cell>
+      </div>
     </div>
   </div>
   <div>
