@@ -6,9 +6,13 @@ cell {
   width: 200px;
 
   .clickable {
-    text-align: center;
     background-color: #eee;
     cursor: pointer;
+    height: 100%;
+  }
+
+  .non-clickable {
+    text-align: center;
     font-size: 30px;
     line-height: 3;
     font-weight: bold;

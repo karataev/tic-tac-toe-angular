@@ -1,5 +1,7 @@
-<div class="clickable" ng-click="$ctrl.click()">
-  <span ng-if="$ctrl.isEmpty()"> </span>
+<div class="clickable" ng-click="$ctrl.click()" ng-if="$ctrl.isEmpty()">
+
+</div>
+<div class="non-clickable">
   <span ng-if="$ctrl.isX()">X</span>
   <span ng-if="$ctrl.isO()">O</span>
 </div>
