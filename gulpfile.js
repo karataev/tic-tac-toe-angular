@@ -6,14 +6,15 @@ function getTask(task) {
 
 gulp.task('clean', getTask('clean'));
 gulp.task('browserSync', getTask('browserSync'));
-gulp.task('copyHtml', getTask('copyHtml'));
+gulp.task('indexHtml', getTask('indexHtml'));
 gulp.task('appJs', getTask('appJs'));
 gulp.task('vendorJs', getTask('vendorJs'));
+gulp.task('templates', getTask('templates'));
 gulp.task('watch', getTask('watch'));
 
 gulp.task('build:dev', gulp.series(
   'clean',
-  gulp.parallel('copyHtml', 'appJs', 'vendorJs')
+  gulp.parallel('indexHtml', 'appJs', 'vendorJs', 'templates')
 ));
 
 gulp.task('serve', gulp.series(

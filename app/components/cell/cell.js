@@ -3,5 +3,5 @@ app
     controller: [function() {
       var vm = this;
     }],
-    template: '<h1>Cell</h1>'
+    templateUrl: 'components/cell/cell.html'
   })

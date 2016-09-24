@@ -1,3 +1,3 @@
 
-var app = angular.module('app', []);
-// console.log(app);
+angular.module('templates', []);
+var app = angular.module('app', ['templates']);
