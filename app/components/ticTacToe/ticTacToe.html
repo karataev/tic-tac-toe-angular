@@ -1,15 +1,22 @@
-<h1>Tic tac toe</h1>
-<div>
-  <button ng-click="$ctrl.startGame()">Start game</button>
+<div ng-if="$ctrl.isIntro()">
+  <h1>Tic tac toe</h1>
+  <div>
+    <button ng-click="$ctrl.startGame()">Start game</button>
+  </div>
 </div>
-<div>
-  Current turn: {{$ctrl.currentPlayer.name}}
-</div>
-<div class="grid">
-  <div class="row" ng-repeat="row in $ctrl.grid">
-    <cell ng-repeat="item in row"
-          data="item"
-          on-click="$ctrl.cellClicked"
-    ></cell>
+<div ng-if="$ctrl.isPlay()">
+  <div>
+    Current turn: {{$ctrl.currentPlayer.name}}
+  </div>
+  <div class="grid">
+    <div class="row" ng-repeat="row in $ctrl.grid">
+      <cell ng-repeat="item in row"
+            data="item"
+            on-click="$ctrl.cellClicked"
+      ></cell>
+    </div>
+  </div>
+  <div>
+    <button ng-click="$ctrl.endGame()">End game</button>
   </div>
 </div>

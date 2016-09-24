@@ -3,10 +3,27 @@ app
     controller: ['Game', '$scope', function(Game, $scope) {
       var vm = this;
 
-      vm.grid = Game.getGrid();
-
       vm.startGame = function() {
         Game.startGame();
+        vm.grid = Game.getGrid();
+      };
+
+      vm.endGame = function() {
+        Game.setState(Game.STATE_INTRO);
+      };
+
+      $scope.$watch(function() {
+        return Game.getState();
+      }, function(newVal) {
+        vm.state = newVal;
+      });
+
+      vm.isIntro = function() {
+        return vm.state === Game.STATE_INTRO;
+      };
+
+      vm.isPlay = function() {
+        return vm.state === Game.STATE_PLAY;
       };
 
       $scope.$watch(function() {

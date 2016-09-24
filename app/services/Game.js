@@ -5,11 +5,12 @@ app
     var CELL_X = 'X';
     var CELL_O = 'O';
 
-    var grid = [
-      [{title: ''}, {title: ''}, {title: ''}],
-      [{title: ''}, {title: ''}, {title: ''}],
-      [{title: ''}, {title: ''}, {title: ''}]
-    ];
+    var STATE_INTRO = 'intro';
+    var STATE_PLAY = 'play';
+
+    var grid;
+
+    var state = STATE_INTRO;
 
     var playerX = {
       name: 'Player X',
@@ -25,8 +26,18 @@ app
       return grid;
     }
 
+    function initGrid() {
+      grid = [
+        [{title: ''}, {title: ''}, {title: ''}],
+        [{title: ''}, {title: ''}, {title: ''}],
+        [{title: ''}, {title: ''}, {title: ''}]
+      ];
+    }
+
     function startGame() {
+      initGrid();
       currentPlayer = playerX;
+      state = STATE_PLAY;
     }
 
     function getCurrentPlayer() {
@@ -37,14 +48,27 @@ app
       currentPlayer = currentPlayer === playerX ? playerO : playerX;
     }
 
+    function getState() {
+      return state;
+    }
+
+    function setState(newState) {
+      state = newState;
+    }
+
     return {
       getGrid: getGrid,
       startGame: startGame,
       getCurrentPlayer: getCurrentPlayer,
       changeTurn: changeTurn,
+      getState: getState,
+      setState: setState,
 
       CELL_EMPTY: CELL_EMPTY,
       CELL_X: CELL_X,
-      CELL_O: CELL_O
+      CELL_O: CELL_O,
+
+      STATE_INTRO: STATE_INTRO,
+      STATE_PLAY: STATE_PLAY
     }
   }])
