@@ -1,6 +1,6 @@
 app
   .component('cell', {
-    controller: ['Game', 'Constants', function(Game, Constants) {
+    controller: function(Game, Constants) {
       var vm = this;
 
       vm.click = function() {
@@ -20,7 +20,7 @@ app
       };
 
       // console.log(vm.data);
-    }],
+    },
     bindings: {
       data: '<',
       onClick: '='

@@ -1,6 +1,6 @@
 app
   .component('ticTacToe', {
-    controller: ['Game', '$scope', 'Constants', function(Game, $scope, Constants) {
+    controller: function(Game, $scope, Constants) {
       var vm = this;
 
       vm.endGame = function() {
@@ -48,6 +48,6 @@ app
       vm.cellClicked = function(item) {
         Game.selectCell(item);
       };
-    }],
+    },
     templateUrl: 'components/ticTacToe/ticTacToe.html'
   })

@@ -1,6 +1,6 @@
 app
   .component('mainMenu', {
-    controller: ['Game', 'Players', function(Game, Players) {
+    controller: function(Game, Players) {
       var vm = this;
 
       vm.player1 = Players.getPlayer1();
@@ -9,7 +9,6 @@ app
       vm.startGame = function() {
         Game.startGame();
       };
-
-    }],
+    },
     templateUrl: 'components/mainMenu/mainMenu.html'
   })

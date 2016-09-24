@@ -1,5 +1,5 @@
 app
-  .factory('Game', ['Players', 'Constants', function(Players, Constants) {
+  .factory('Game', function(Players, Constants) {
 
     var grid;
     var state = Constants.STATE_INTRO;
@@ -105,4 +105,4 @@ app
       setState: setState,
       selectCell: selectCell
     }
-  }])
+  })

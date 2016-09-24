@@ -1,5 +1,5 @@
 app
-  .factory('Players', ['Constants', function(Constants) {
+  .factory('Players', function(Constants) {
 
     var playerX = {
       name: 'X',
@@ -22,4 +22,4 @@ app
       getPlayer1: getPlayer1,
       getPlayer2: getPlayer2
     }
-  }])
+  })

@@ -1,6 +1,6 @@
 app
   .component('victoryCanvas', {
-    controller: ['$element', 'Game', 'Constants', function($element, Game, Constants) {
+    controller: function($element, Game, Constants) {
       var vm = this;
 
       var grid = Game.getGrid();
@@ -62,6 +62,6 @@ app
       ctx.moveTo(coords[0].x, coords[0].y);
       ctx.lineTo(coords[1].x, coords[1].y);
       ctx.stroke();
-    }],
+    },
     templateUrl: 'components/victoryCanvas/victoryCanvas.html'
   })
