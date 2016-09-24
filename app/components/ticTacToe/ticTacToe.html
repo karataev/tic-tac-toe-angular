@@ -1,10 +1,5 @@
-<div ng-if="$ctrl.stateIntro()">
-  <h1>Tic tac toe</h1>
-  <div>
-    <button class="btn btn-default" ng-click="$ctrl.startGame()">Start game</button>
-  </div>
-</div>
-<div ng-if="$ctrl.statePlay() || $ctrl.stateVictory() || $ctrl.stateDraw()">
+<main-menu ng-if="$ctrl.stateIntro()"></main-menu>
+<div ng-if="$ctrl.statePlay() || $ctrl.stateVictory() || $ctrl.stateDraw()" class="gameplay">
   <div class="grid-wrap">
     <victory-canvas ng-if="$ctrl.stateVictory()"></victory-canvas>
     <div class="grid">

@@ -1,6 +1,6 @@
 app
   .component('cell', {
-    controller: ['Game', function(Game) {
+    controller: ['Game', 'Constants', function(Game, Constants) {
       var vm = this;
 
       vm.click = function() {
@@ -8,15 +8,15 @@ app
       };
 
       vm.isEmpty = function() {
-        return vm.data.title === Game.CELL_EMPTY;
+        return vm.data.title === Constants.CELL_EMPTY;
       };
 
       vm.isX = function() {
-        return vm.data.title === Game.CELL_X;
+        return vm.data.title === Constants.CELL_X;
       };
 
       vm.isO = function() {
-        return vm.data.title === Game.CELL_O;
+        return vm.data.title === Constants.CELL_O;
       };
 
       // console.log(vm.data);

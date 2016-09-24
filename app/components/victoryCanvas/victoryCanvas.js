@@ -1,6 +1,6 @@
 app
   .component('victoryCanvas', {
-    controller: ['$element', 'Game', function($element, Game) {
+    controller: ['$element', 'Game', 'Constants', function($element, Game, Constants) {
       var vm = this;
 
       var grid = Game.getGrid();
@@ -12,7 +12,7 @@ app
           var c1 = grid[index][0];
           var c2 = grid[index][1];
           var c3 = grid[index][2];
-          return c1.title != Game.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
+          return c1.title != Constants.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
               {x: offset, y: index * size + offset},
               {x: size * 3 - offset, y: index * size + offset}
             ];
@@ -22,7 +22,7 @@ app
           var c1 = grid[0][index];
           var c2 = grid[1][index];
           var c3 = grid[2][index];
-          return c1.title != Game.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
+          return c1.title != Constants.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
               {x: offset + index * size, y: offset},
               {x: offset + index * size, y: size * 3 - offset}
             ];
@@ -32,7 +32,7 @@ app
           var c1 = grid[0][0];
           var c2 = grid[1][1];
           var c3 = grid[2][2];
-          return c1.title != Game.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
+          return c1.title != Constants.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
               {x: offset, y: offset},
               {x: size * 3 - offset, y: size * 3 - offset}
             ];
@@ -42,7 +42,7 @@ app
           var c1 = grid[0][2];
           var c2 = grid[1][1];
           var c3 = grid[2][0];
-          return c1.title != Game.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
+          return c1.title != Constants.CELL_EMPTY && c1.title === c2.title && c2.title === c3.title && [
               {x: size * 3 - offset, y: offset},
               {x: offset, y: size * 3 - offset}
             ];

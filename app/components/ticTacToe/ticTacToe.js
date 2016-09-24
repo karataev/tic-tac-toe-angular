@@ -1,14 +1,10 @@
 app
   .component('ticTacToe', {
-    controller: ['Game', '$scope', function(Game, $scope) {
+    controller: ['Game', '$scope', 'Constants', function(Game, $scope, Constants) {
       var vm = this;
 
-      vm.startGame = function() {
-        Game.startGame();
-      };
-
       vm.endGame = function() {
-        Game.setState(Game.STATE_INTRO);
+        Game.setState(Constants.STATE_INTRO);
       };
 
       vm.restartGame = function() {
@@ -28,19 +24,19 @@ app
       });
 
       vm.stateIntro = function() {
-        return vm.state === Game.STATE_INTRO;
+        return vm.state === Constants.STATE_INTRO;
       };
 
       vm.statePlay = function() {
-        return vm.state === Game.STATE_PLAY;
+        return vm.state === Constants.STATE_PLAY;
       };
 
       vm.stateVictory = function() {
-        return vm.state === Game.STATE_VICTORY;
+        return vm.state === Constants.STATE_VICTORY;
       };
 
       vm.stateDraw = function() {
-        return vm.state === Game.STATE_DRAW;
+        return vm.state === Constants.STATE_DRAW;
       };
 
       $scope.$watch(function() {
