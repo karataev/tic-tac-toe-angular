@@ -1,0 +1,13 @@
+tic-tac-toe {
+  display: block;
+
+  .grid {
+    border: 1px solid blue;
+    width: 600px;
+    margin: 0 auto;
+
+    .row {
+      display: flex;
+    }
+  }
+}
