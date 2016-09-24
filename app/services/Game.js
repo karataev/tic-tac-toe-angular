@@ -98,6 +98,8 @@ app
     }
 
     function selectCell(cell) {
+      if (state !== STATE_PLAY) return;
+
       cell.title = currentPlayer.value;
       if (isVictory()) {
         state = STATE_VICTORY;
