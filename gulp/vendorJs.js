@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 
 module.exports = function vendorJs() {
   return gulp.src([
+    'node_modules/jquery/dist/jquery.js',
     'node_modules/angular/angular.js',
     'node_modules/lodash/lodash.js'
   ])

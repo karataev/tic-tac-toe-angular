@@ -5,14 +5,8 @@
   </div>
 </div>
 <div ng-if="$ctrl.statePlay() || $ctrl.stateVictory()">
-  <div ng-if="$ctrl.stateVictory()">
-    <h1>VICTORY!!! {{$ctrl.currentPlayer.name}}</h1>
-  </div>
-  <div ng-if="$ctrl.statePlay()">
-    Current turn: {{$ctrl.currentPlayer.name}}
-  </div>
   <div class="grid-wrap">
-    <canvas class="victory-canvas" ng-if="$ctrl.stateVictory()"></canvas>
+    <victory-canvas ng-if="$ctrl.stateVictory()"></victory-canvas>
     <div class="grid">
       <div class="row" ng-repeat="row in $ctrl.grid">
         <cell ng-repeat="item in row"
@@ -21,6 +15,12 @@
         ></cell>
       </div>
     </div>
+  </div>
+  <div ng-if="$ctrl.statePlay()">
+    Current turn: {{$ctrl.currentPlayer.name}}
+  </div>
+  <div ng-if="$ctrl.stateVictory()">
+    <h1>VICTORY!!! {{$ctrl.currentPlayer.name}}</h1>
   </div>
   <div>
     <button ng-click="$ctrl.restartGame()">Restart</button>
