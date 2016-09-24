@@ -1,11 +1,14 @@
-<div ng-if="$ctrl.isIntro()">
+<div ng-if="$ctrl.stateIntro()">
   <h1>Tic tac toe</h1>
   <div>
     <button ng-click="$ctrl.startGame()">Start game</button>
   </div>
 </div>
-<div ng-if="$ctrl.isPlay()">
-  <div>
+<div ng-if="$ctrl.statePlay() || $ctrl.stateVictory()">
+  <div ng-if="$ctrl.stateVictory()">
+    <h1>VICTORY!!! {{$ctrl.currentPlayer.name}}</h1>
+  </div>
+  <div ng-if="$ctrl.statePlay()">
     Current turn: {{$ctrl.currentPlayer.name}}
   </div>
   <div class="grid">

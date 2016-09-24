@@ -27,12 +27,16 @@ app
         vm.grid = newVal;
       });
 
-      vm.isIntro = function() {
+      vm.stateIntro = function() {
         return vm.state === Game.STATE_INTRO;
       };
 
-      vm.isPlay = function() {
+      vm.statePlay = function() {
         return vm.state === Game.STATE_PLAY;
+      };
+
+      vm.stateVictory = function() {
+        return vm.state === Game.STATE_VICTORY;
       };
 
       $scope.$watch(function() {
@@ -42,8 +46,7 @@ app
       });
 
       vm.cellClicked = function(item) {
-        item.title = vm.currentPlayer.value;
-        Game.changeTurn();
+        Game.selectCell(item);
       };
     }],
     templateUrl: 'components/ticTacToe/ticTacToe.html'
