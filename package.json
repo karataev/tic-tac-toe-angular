@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "gulp build -p"
+    "prod": "gulp build -p",
+    "deploy": "npm run prod && surge --project ./dist --domain ttt.surge.sh"
   },
   "keywords": [],
   "author": "",
