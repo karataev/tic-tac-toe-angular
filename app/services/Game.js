@@ -1,8 +1,8 @@
 app
-  .factory('Game', function(Players, Constants) {
+  .factory('Game', function(Players, Constants, $state) {
 
     var grid;
-    var state = Constants.STATE_INTRO;
+    var state;
     var playerX = Players.getPlayer1();
     var playerO = Players.getPlayer2();
     var currentPlayer;
@@ -20,9 +20,9 @@ app
     }
 
     function startGame() {
+      state = Constants.STATE_PLAY;
       initGrid();
       currentPlayer = playerX;
-      state = Constants.STATE_PLAY;
     }
 
     function getCurrentPlayer() {

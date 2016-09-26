@@ -5,6 +5,8 @@
   box-sizing: border-box;
 }
 
-body {
-
+.root-ui-view {
+  display: block;
+  width: 800px;
+  margin: 50px auto;
 }

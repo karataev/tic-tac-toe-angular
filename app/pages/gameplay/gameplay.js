@@ -1,11 +1,9 @@
 app
-  .component('ticTacToe', {
+  .component('gameplay', {
     controller: function(Game, $scope, Constants) {
       var vm = this;
 
-      vm.endGame = function() {
-        Game.setState(Constants.STATE_INTRO);
-      };
+      Game.startGame();
 
       vm.restartGame = function() {
         Game.startGame();
@@ -23,7 +21,6 @@ app
         vm.currentPlayer = newVal;
       });
 
-      vm.stateIntro = () => vm.state === Constants.STATE_INTRO;
       vm.statePlay = () => vm.state === Constants.STATE_PLAY;
       vm.stateVictory = () => vm.state === Constants.STATE_VICTORY;
       vm.stateDraw = () => vm.state === Constants.STATE_DRAW;
@@ -32,5 +29,5 @@ app
         Game.selectCell(item);
       };
     },
-    templateUrl: 'components/ticTacToe/ticTacToe.html'
+    templateUrl: 'pages/gameplay/gameplay.html'
   })

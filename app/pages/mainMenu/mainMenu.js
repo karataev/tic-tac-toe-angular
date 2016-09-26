@@ -10,5 +10,5 @@ app
         Game.startGame();
       };
     },
-    templateUrl: 'components/mainMenu/mainMenu.html'
+    templateUrl: 'pages/mainMenu/mainMenu.html'
   })

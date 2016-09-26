@@ -1,0 +1,24 @@
+<div class="grid-wrap">
+  <victory-canvas ng-if="$ctrl.stateVictory()"></victory-canvas>
+  <div class="grid">
+    <div class="grid-row" ng-repeat="row in $ctrl.grid">
+      <cell ng-repeat="item in row"
+            data="item"
+            on-click="$ctrl.cellClicked"
+      ></cell>
+    </div>
+  </div>
+</div>
+<div ng-if="$ctrl.statePlay()" class="current-turn">
+  {{$ctrl.currentPlayer.name}} turn
+</div>
+<div ng-if="$ctrl.stateVictory()">
+  <h1>{{$ctrl.currentPlayer.name}} won!</h1>
+</div>
+<div ng-if="$ctrl.stateDraw()">
+  <h1>Draw!</h1>
+</div>
+<div class="buttons">
+  <button class="btn btn-default" ng-click="$ctrl.restartGame()">Restart</button>
+  <a ui-sref="intro" class="btn btn-default">Main Menu</a>
+</div>
